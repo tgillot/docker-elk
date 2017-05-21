@@ -19,9 +19,8 @@ services:
     user: root
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
-      - ./volumes/logstash/syslog_agg.conf:/etc/logstash/conf.d/syslog_agg.conf
       - ./logstash/pipeline:/usr/share/logstash/pipeline
-      - /var/log:/var/log:ro
+      - /data/rsyslog:/data/rsyslog
     environment:
       LS_JAVA_OPTS: "-Xmx256m -Xms256m"
     networks:
