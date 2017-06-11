@@ -32,8 +32,9 @@ services:
     build: kibana/
     volumes:
       - ./kibana/config/:/usr/share/kibana/config
-    ports:
-      - "5601:5601"
+   # Use docker nginx as proxy
+   # ports:  
+    #  - "5601:5601"
     networks:
       - elk
     depends_on:
